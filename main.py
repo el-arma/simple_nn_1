@@ -6,16 +6,9 @@ from PIL import Image
 import io
 from torchvision import transforms
 import uvicorn
+# from interface import NeuralNetwork
 
 app = FastAPI()
-
-# Transform to normalize and convert images to tensors
-transform = transforms.Compose([
-    transforms.ToTensor(),                
-    # Convert PIL Image to tensor
-    transforms.Normalize((0.5,), (0.5,))  
-    # Normalize pixel values to [-1, 1]
-])
 
 @app.get("/")
 async def root():
@@ -42,7 +35,6 @@ async def upload_image(file: UploadFile = File(...)):
 # TO RUN:
 
 # uvicorn main:app --reload
-
 
 if __name__ == "__main__":
     uvicorn.run("main:app", host="127.0.0.1", port = 8000, reload = True)

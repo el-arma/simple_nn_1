@@ -12,7 +12,8 @@ wheels/
 
 # my folders:
 ARCH
-data
+data/MNIST
+data/mnist_images
 
 # my files:
 Notes.md
