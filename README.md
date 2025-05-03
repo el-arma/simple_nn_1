@@ -16,8 +16,8 @@ This repository contains a minimal implementation of a neural network-based pred
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/your-username/AGH-post_grad-MSI2.git
-   cd AGH-post_grad-MSI2
+   git clone https://github.com/el-arma/simple_nn_1
+   cd HM2-Z3
 
 2. **Run the server**
    ```bash 
