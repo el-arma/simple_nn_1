@@ -115,6 +115,8 @@ print("Done!")
 # %%
 import matplotlib.pyplot as plt
 
+#To check total_train_loss must be define first (CELL ABOVE)!
+
 plt.figure(figsize=(8, 5))
 plt.plot(total_train_loss, label='Training Loss')
 plt.title('Training Loss Over Epochs')

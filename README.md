@@ -17,13 +17,24 @@ This repository contains a minimal implementation of a neural network-based pred
 1. **Clone the repository**
    ```bash
    git clone https://github.com/el-arma/simple_nn_1
-   cd HM2-Z3
+   cd simple_nn_1
 
-2. **Run the server**
+2. **Prep evn. (if you use uv)**
+   ```bash 
+   uv sync
+
+2. **Get data**
+   ```bash 
+   cd data
+   python -m get_data
+   ```
+
+3. **Run the server**
    ```bash 
    python -m main
    ```
-3. **Run the client**
+
+4. **Run the client**
    ```bash 
    python -m client_side
    ```
