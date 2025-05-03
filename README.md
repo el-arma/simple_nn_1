@@ -19,7 +19,7 @@ This repository contains a minimal implementation of a neural network-based pred
    git clone https://github.com/el-arma/simple_nn_1
    cd simple_nn_1
 
-2. **Prep evn. (if you use uv)**
+2. **Prep .env (if you use uv)**
    ```bash 
    uv sync
 
