@@ -2,8 +2,12 @@ from torch import cuda, device, load, no_grad
 from model.NNmodel import NeuralNetwork
 from torchvision import transforms
 from PIL import Image
+import io
 
-model = NeuralNetwork().to(device('cuda' if cuda.is_available() else 'cpu'))
+server_device = device('cuda' if cuda.is_available() else 'cpu')
+
+model = NeuralNetwork().to(server_device)
+
 model.load_state_dict(load("model/nn_model-v1.00.pth", weights_only=True))
 
 # Transform to normalize and convert images to tensors
@@ -15,20 +19,25 @@ transform = transforms.Compose([
 ])
 
 # Function to load and preprocess an image
-def load_image(image_path):
-    image = Image.open(image_path).convert('L')  
+def prepare_image(image_content):
+
+    image = Image.open(io.BytesIO(image_content)).convert("L") 
     # Convert to grayscale if needed
+
     image = transform(image).unsqueeze(0)       
     # Apply transformations and add batch dimension
-    return image.to(device('cuda' if cuda.is_available() else 'cpu'))
 
-# Example usage
-image_path = "data/mnist_images/0000_label_7.png"
-input_image = load_image(image_path)
+    return image.to(server_device)
 
-model.eval()
 
-with no_grad():
-    prediction = model(input_image)
-    predicted_class = prediction.argmax(1).item()
-    print(f"Predicted class: {predicted_class}")
+def predict_number(input_image):
+
+    model.eval()
+
+    with no_grad():
+        prediction = model(input_image)
+
+        predicted_number = prediction.argmax(1).item()
+
+        return f'Recognised number: {predicted_number}'
+
