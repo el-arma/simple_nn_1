@@ -5,7 +5,7 @@ Project developed as part of postgraduate studies at AGH University of Science a
 
 ## 📌 Overview
 
-This repository contains a minimal implementation of a neural network-based prediction model using [PyTorch](https://pytorch.org/) and [FastAPI](https://fastapi.tiangolo.com/), tested on the legendary MNIST dataset. The project is part of the "Metody sztucznej inteligencji 2" (MSI2) course and demonstrates a practical approach to machine learning integration with web APIs.
+This repository contains a minimal implementation of a neural network-based prediction model using [PyTorch](https://pytorch.org/) and [FastAPI](https://fastapi.tiangolo.com/), tested on the legendary MNIST dataset.
 
 ## 🧠 Project Components
 
