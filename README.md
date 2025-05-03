@@ -20,7 +20,9 @@ This repository contains a minimal implementation of a neural network-based pred
    cd simple_nn_1
 
 2. **Prep .env (if you use uv)**
-   ```bash 
+   ```bash
+   uv venv
+   .venv\Scripts\activate 
    uv sync
 
 2. **Get data**
@@ -30,7 +32,8 @@ This repository contains a minimal implementation of a neural network-based pred
    ```
 
 3. **Run the server**
-   ```bash 
+   ```bash
+   cd ..
    python -m main
    ```
 
